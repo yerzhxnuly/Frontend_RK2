@@ -1,30 +1,33 @@
 import { Tabs } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-
-
-export default function TabLayout() {
+export default function TabsLayout() {
   return (
-    <Tabs
-  screenOptions={{
-    tabBarActiveTintColor: '#ffd33d',
-    headerStyle: {
-      backgroundColor: '#25292e',
-    },
-    headerShadowVisible: false,
-    headerTintColor: '#fff',
-    tabBarStyle: {
-    backgroundColor: '#25292e',
-    },
-  }}
->
-
+    <Tabs>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
+          title: 'StickerSmash',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="image" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="form"
+        options={{
+          title: 'Form',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="document-text" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="news"
+        options={{
+          title: 'News',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="newspaper" size={size} color={color} />
           ),
         }}
       />
@@ -32,8 +35,8 @@ export default function TabLayout() {
         name="about"
         options={{
           title: 'About',
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24}/>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="information-circle" size={size} color={color} />
           ),
         }}
       />
